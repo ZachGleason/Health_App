@@ -1,7 +1,12 @@
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+}
+
 #header {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-left: 75px;
-    color: rgb(105, 50, 233);
+    color: rgb(0, 0, 0);
 }
 
 #created {
@@ -13,6 +18,20 @@
 }
 
 #left {
-    margin-left: 150px;
+
+}
+
+#button {
+    width: 540px;
+    height: 50px;
+    color: white;
+    border: none;
+}
+
+#button2 {
+    width: 540px;
+    height: 50px;
+    color: white;
+    border: none;
 }
 

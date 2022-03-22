@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
 </head>
 <body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light py-3">
             <div class="container">
@@ -50,9 +57,7 @@
                         </div>
 
                         <div class="form-group col-lg-12 mx-auto mb-0">
-                            <a href="#" class="btn btn-primary btn-block py-2">
-                                <span class="font-weight-bold">Sign In</span>
-                            </a>
+                                <button type="submit" class="font-weight-bold bg-dark" id="button2">Sign In</span>
                         </div>
                         <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
                             <div class="border-bottom w-100 ml-5"></div>
@@ -61,7 +66,7 @@
                         </div>
                         <!-- Already Registered -->
                         <div class="text-center w-100">
-                            <p class="text-muted font-weight-bold" id="left">Don't Have a Account? <a href="/" class="text-primary ml-2" method="post">Register</a></p>
+                            <p class="text-muted font-weight-bold" id="left">Don't Have a Account? <a href="/" class="text-dark ml-2" method="post">Register</a></p>
                         </div>
                 </div>
             </div>

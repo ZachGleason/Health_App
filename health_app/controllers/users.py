@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, session, flash
 from health_app.models.user import User
-# from health_app.models.meal import Meal
+from health_app.models.meal import Meal
 # from health_app.models.vitamin import Vitamin
 # from health_app.models.workout import Workout
 from crypt import methods
@@ -29,8 +29,6 @@ def register_user():
         "weight": request.form['weight'],
         "location": request.form['location'],
         "gender": request.form['gender'],
-        "created_at": request.form['created_at'],
-        "updated_at": request.form['updated_at']
     }
     id = User.save(data)
     session['user_id'] = id
@@ -55,9 +53,9 @@ def dashboard():
     data ={
         'id': session['user_id']
     }
-    return render_template("dashboard.html")
+    return render_template("dashboard.html", meals=Meal.get_all_meals(), user=User.get_by_id(data))
 
 @app.route('/logout')
 def logout():
     session.clear()
-    return redirect('/')
+    return redirect('/login')

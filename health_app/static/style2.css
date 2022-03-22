@@ -1,0 +1,166 @@
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+}
+
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#head {
+    margin-right: 780px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 10px;
+}
+
+#signout {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-right: 30px;
+}
+
+#text {
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+#food {
+    height: 800px;
+    width: 700px;
+    position: absolute;
+    display: flex;
+    margin-top: 100px;
+    margin-left: 50px;
+    background-color: rgb(59, 59, 59);
+    border-radius: 20px;
+}
+
+#fitness {
+    height: 400px;
+    width: 950px;
+    position: absolute;
+    display: flex;
+    margin-top: 100px;
+    margin-left: 800px;
+    background-color: rgb(59, 59, 59);
+    border-radius: 20px;
+}
+
+#profile {
+    height: 45px;
+    margin-right: 20px;
+}
+
+#vitamins {
+    height: 350px;
+    width: 450px;
+    position: absolute;
+    display: flex;
+    margin-top: 550px;
+    margin-left: 800px;
+    background-color: rgb(59, 59, 59);
+    border-radius: 20px;
+}
+
+#sleep {
+    height: 350px;
+    width: 450px;
+    position: absolute;
+    display: flex;
+    margin-top: 550px;
+    margin-left: 1300px;
+    background-color: rgb(59, 59, 59);
+    border-radius: 20px;
+}
+
+#top {
+    text-align: center;
+    height: 30px;
+    width: 700px;
+    color: rgb(233, 232, 232);
+}
+
+#meal {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+
+#line, #line2, #line3, #line4 {
+    background-color: white;
+    margin-top: -5px;
+}
+
+
+#fitnesstext {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+#top1 {
+    color: rgb(233, 232, 232);
+    height: 50px;
+    width: 950px;
+    text-align: center;
+}
+
+#top2{
+    color: rgb(233, 232, 232);
+    height: 50px;
+    width: 450px;
+    text-align: center;
+}
+
+#top3{
+    color: rgb(233, 232, 232);
+    height: 50px;
+    width: 450px;
+    text-align: center;
+}
+
+#vitaminss{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 3px;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+#sleeptext {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+
+.mealbox {
+    height: 70px;
+    width: 650px;
+    background-color: rgb(226, 220, 211);
+    border-radius: 30px;
+    margin-top: 5px;
+}
+
+#containmeal {
+    height: 710px;
+    width: 650px;
+    margin-left: 25px;
+    margin-top: 60px;
+    position: absolute;
+    /* display: flex; */
+}
+
+#plus {
+    height: 40px;
+    position: absolute;
+    left: 10px;
+}

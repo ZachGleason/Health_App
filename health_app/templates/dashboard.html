@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
 </head>
 <body>
-    
+<!-- Navigation -->
+<form action="/logout">
+    <nav class="navbar navbar-expand-lg navbar-light shadow fixed-top">
+        <div class="container" id="head">
+            <p class="navbar-brand" id="text">Intune Health</p>
+        </div>
+        <a href="/profile"><img src="static/images/icon.png" alt="profile" id="profile"></a> 
+        <button type="submit" class="btn btn-dark" id="signout">Sign Out</button>
+    </nav>
+</form>
+<header class="masthead">
+<div id="food">
+    <div id="top">
+        <a href='/add/meal/{{user.id}}'><img src="static/images/plus.png" alt="plus" id="plus"></a>
+        <h1 id="meal">Meal Tracker</h1>
+        <hr id="line">
+    </div>
+    <div id="containmeal">
+        {%  for meal in meals %}
+        <div class="mealbox">
+            <p>{{ meal.meal_name }}</p>
+            <p>{{ meal.calories }}</p>
+            <p>{{ meal.protein }}</p>
+            <p>{{ meal.notes }}</p>
+            <p>{{ meal.meal_time}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div id="fitness">
+    <div id="top1">
+        <h1 id="fitnesstext">Fitness Log</h1>
+        <hr id="line2">
+    </div>
+</div>
+<div id="vitamins">
+    <div id="top2">
+        <h1 id="vitaminss">Vitamins</h1>
+        <hr id="line3">
+    </div>
+</div>
+<div id="sleep">
+    <div id="top3">
+        <h1 id="sleeptext">Sleep Report</h1>
+        <hr id="line4">
+    </div>
+</div>
+</header>
 </body>
 </html>

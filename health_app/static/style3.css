@@ -1,0 +1,40 @@
+#meals {
+    margin: auto;
+}
+
+#notes {
+    height: 80px;
+}
+
+#button {
+width: 540px;
+height: 45px;
+color: white;
+}
+
+.container {
+    margin-right: 700px;
+}
+
+#push {
+    margin-bottom: 200px;
+}
+
+#dash {
+    text-decoration:none ;
+    color: black;
+    position: absolute;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 195px;
+}
+
+#backgrnd {
+    margin-top: -25px;
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

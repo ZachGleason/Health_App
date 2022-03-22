@@ -14,8 +14,6 @@ class User:
         self.weight = data["weight"]
         self.location = data["location"]
         self.gender = data["gender"]
-        self.created_at = data["created_at"]
-        self.updated_at = data["updated_at"]
 
     @classmethod
     def get_all(cls):
