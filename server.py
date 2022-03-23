@@ -3,6 +3,7 @@ from health_app.controllers import users
 from health_app.controllers import meals
 from health_app.controllers import vitamins
 from health_app.controllers import workouts
+from health_app.controllers import sleeps
 
 if __name__ == '__main__':
     app.run(debug = True)

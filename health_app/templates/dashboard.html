@@ -115,8 +115,35 @@
 </div>
 <div id="sleep">
     <div id="top3">
+        <a href='/add/sleep/{{user.id}}'><img src="static/images/plus.png" alt="plus" id="plus2"></a>
         <h1 id="sleeptext">Sleep Report</h1>
-        <hr id="line4">
+        <hr id="line3">
+        <div id="fitnessname">
+            <h5 id="sleep1">Time</h5>          
+            <h5 id="sleep2">Deep Sleep</h5>
+            <h5 id="sleep3">HR</h5>
+            <h5 id="sleep4">Date</h5>
+        </div>
+        <hr id="line5">
+    </div>
+    <div id="sleepbox">
+        {% for sleep in sleeps %}
+        <div id="second">
+            <table>
+                <tbody >
+                    <tr>
+                        <td><p id="sleep5">{{ sleep.sleep_time }}</p></td>
+                        <td><p id="sleep6">{{ sleep.deep_sleep}}</p></td>
+                        <td><p id="sleep7">{{ sleep.heart_rate}}</p></td>
+                        <td><p id="sleep8">{{ sleep.date.strftime('%m-%d')}}</p></td>
+                        <a href="/delete/sleep/{{sleep.id}}"><img src="/static/images/x2.png" alt="x" id="x"></a>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        {% endfor %}
+    </div>
+</div>
     </div>
 </div>
 </header>

@@ -3,6 +3,7 @@ from health_app.models.user import User
 from health_app.models.meal import Meal
 from health_app.models.vitamin import Vitamin
 from health_app.models.workout import Workout
+from health_app.models.sleep import Sleep
 from crypt import methods
 from health_app import app
 from flask_bcrypt import Bcrypt
@@ -57,7 +58,7 @@ def dashboard():
     data ={
         'id': session['user_id']
     }
-    return render_template("dashboard.html", meals=Meal.get_all_meals(), user=User.get_by_id(data), workouts=Workout.get_all_workouts(), vitamins=Vitamin.get_all_vitamins())
+    return render_template("dashboard.html", meals=Meal.get_all_meals(), user=User.get_by_id(data), workouts=Workout.get_all_workouts(), vitamins=Vitamin.get_all_vitamins(), sleeps=Sleep.get_all_sleep())
 
 @app.route('/logout')
 def logout():
