@@ -7,7 +7,7 @@ class Meal:
         self.calories = data["calories"]
         self.protein = data["protein"]
         self.notes = data["notes"]
-        self.meal_time = data["meal_time"]
+        self.meal_date= data["meal_date"]
         self.user_id = data["user_id"]
 
     @classmethod
@@ -23,3 +23,8 @@ class Meal:
         for row in results:
             all_meals.append( cls(row) )
         return all_meals
+
+    @classmethod
+    def delete_meal(cls,data):
+        query = "DELETE FROM meals WHERE id = %(id)s;"
+        return connectToMySQL("fitness").query_db(query, data)

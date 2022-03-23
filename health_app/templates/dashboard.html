@@ -25,29 +25,92 @@
         <a href='/add/meal/{{user.id}}'><img src="static/images/plus.png" alt="plus" id="plus"></a>
         <h1 id="meal">Meal Tracker</h1>
         <hr id="line">
+        <div id="names">
+            <h5 id="a">Meal Name</h5>          
+            <h5 id="b">Calories</h5>
+            <h5 id="c">Protein(g)</h5>
+            <h5 id="d">Time</h5>
+            <h5 id="e">Date</h5>
+        </div>
+        <hr id="line5">
     </div>
     <div id="containmeal">
         {%  for meal in meals %}
         <div class="mealbox">
-            <p>{{ meal.meal_name }}</p>
-            <p>{{ meal.calories }}</p>
-            <p>{{ meal.protein }}</p>
-            <p>{{ meal.notes }}</p>
-            <p>{{ meal.meal_time}}</p>
+            <table>
+                <tbody>
+                    <tr id="row">
+                        <td><p id="one">{{ meal.meal_name }}</p></td>
+                        <td><p id="two">{{ meal.calories }}</p></td>
+                        <td><p id="three">{{ meal.protein }}</p></td>
+                        <td><p id="four">{{ meal.notes }}</p></td>
+                        <td><p id="five">{{ meal.meal_date.strftime('%Y-%m-%d')}}</p></td>
+                        <a href="/delete/{{meal.id}}"><img src="/static/images/x2.png" alt="x" id="x"></a>
+                        </tr>
+                </tbody>
+            </table>
         </div>
         {% endfor %}
     </div>
 </div>
 <div id="fitness">
     <div id="top1">
+        <a href='/add/workout/{{user.id}}'><img src="static/images/plus.png" alt="plus" id="plus2"></a>
         <h1 id="fitnesstext">Fitness Log</h1>
         <hr id="line2">
+        <div id="fitnessname">
+            <h5 id="workout">Workout Type</h5>          
+            <h5 id="duration">Duration</h5>
+            <h5 id="calorie">Calories Burned</h5>
+            <h5 id="date">Date</h5>
+            <h5 id="time">Time</h5>
+        </div>
+        <hr id="line5">
+    </div>
+    <div id="fitnessbox">
+        {%  for workout in workouts %}
+        <div id="fit">
+        <table>
+            <tbody >
+                <tr>
+                    <td><p id="work1">{{ workout.workout_name }}</p></td>
+                    <td><p id="time1">{{ workout.time_lasted }}</p></td>
+                    <td><p id="calorie1">{{ workout.calorie_count }}</p></td>
+                    <td><p id="date1">{{ workout.date.strftime('%Y-%m-%d') }}</p></td>
+                    <td><p id="note1">{{ workout.notes }}</p></td>
+                    <a href="/delete/workout/{{workout.id}}"><img src="/static/images/x2.png" alt="x" id="x"></a>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        {% endfor %}
     </div>
 </div>
 <div id="vitamins">
     <div id="top2">
+        <a href='/add/vitamin/{{user.id}}'><img src="static/images/plus.png" alt="plus" id="plus2"></a>
         <h1 id="vitaminss">Vitamins</h1>
         <hr id="line3">
+        <div id="fitnessname">
+            <h5 id="vitamin1">Vitamin Name</h5>          
+            <h5 id="dose">Dosage</h5>
+        </div>
+        <hr id="line5">
+    </div>
+    <div id="vitaminbox">
+        {% for vitamin in vitamins %}
+        <div id="first">
+            <table>
+                <tbody >
+                    <tr>
+                        <td><p id="vitamin_name">{{ vitamin.vitamin_name }}</p></td>
+                        <td><p id="dosage">{{ vitamin.dosage }}</p></td>
+                        <a href="/delete/vitamin/{{vitamin.id}}"><img src="/static/images/x2.png" alt="x" id="x"></a>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        {% endfor %}
     </div>
 </div>
 <div id="sleep">

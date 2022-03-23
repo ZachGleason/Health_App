@@ -1,8 +1,8 @@
 from flask import render_template, request, redirect, session, flash
 from health_app.models.user import User
 from health_app.models.meal import Meal
-# from health_app.models.vitamin import Vitamin
-# from health_app.models.workout import Workout
+from health_app.models.vitamin import Vitamin
+from health_app.models.workout import Workout
 from crypt import methods
 from health_app import app
 from flask_bcrypt import Bcrypt
@@ -10,11 +10,15 @@ bcrypt = Bcrypt(app)
 
 @app.route('/')
 def register():
-    return render_template("register.html")
+    return render_template("home.html")
 
 @app.route('/login')
 def main():
     return render_template("login.html")
+
+@app.route('/register')
+def link():
+    return render_template("register.html")
 
 @app.route('/register/user', methods=["POST"])
 def register_user():
@@ -53,7 +57,7 @@ def dashboard():
     data ={
         'id': session['user_id']
     }
-    return render_template("dashboard.html", meals=Meal.get_all_meals(), user=User.get_by_id(data))
+    return render_template("dashboard.html", meals=Meal.get_all_meals(), user=User.get_by_id(data), workouts=Workout.get_all_workouts(), vitamins=Vitamin.get_all_vitamins())
 
 @app.route('/logout')
 def logout():

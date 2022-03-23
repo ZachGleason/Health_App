@@ -1,8 +1,8 @@
 from flask import render_template, request, redirect, session, flash
 from health_app.models.user import User
 from health_app.models.meal import Meal
-# from health_app.models.vitamin import Vitamin
-# from health_app.models.workout import Workout
+from health_app.models.vitamin import Vitamin
+from health_app.models.workout import Workout
 from health_app import app
 
 @app.route('/add/meal/<int:id>')
@@ -25,4 +25,15 @@ def process_meal(id):
         "user_id": session["user_id"]
     }
     Meal.new_meal(data)
+    return redirect('/dashboard')
+
+
+@app.route('/delete/<int:id>')
+def delete(id):
+    if 'user_id' not in session:
+        return redirect('/logout')
+    data = {
+        "id":id
+    }
+    Meal.delete_meal(data)
     return redirect('/dashboard')

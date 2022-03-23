@@ -97,6 +97,16 @@
     margin-top: -5px;
 }
 
+#line5 {
+    background-color: white;
+    bottom: -100px;
+
+}
+#names {
+    height: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
 
 #fitnesstext {
     text-align: center;
@@ -143,7 +153,7 @@
 
 
 .mealbox {
-    height: 70px;
+    height: 40px;
     width: 650px;
     background-color: rgb(226, 220, 211);
     border-radius: 30px;
@@ -154,7 +164,7 @@
     height: 710px;
     width: 650px;
     margin-left: 25px;
-    margin-top: 60px;
+    margin-top: 100px;
     position: absolute;
     /* display: flex; */
 }
@@ -163,4 +173,152 @@
     height: 40px;
     position: absolute;
     left: 10px;
+}
+
+#one {
+    margin-left: 50px;
+}
+
+#five {
+    margin-left: 60px;
+}
+
+#four {
+    margin-left: 70px;
+}
+
+
+#two {
+    margin-left: 60px;
+}
+
+#three {
+    margin-left: 80px;
+}
+
+#seven {
+    position: absolute;
+    display: flex;
+    margin-left: 150px;
+}
+
+#a {
+    font-size: 18px;
+    position: absolute;
+    margin-right: 500px;
+}
+
+#b {
+    font-size: 18px;
+    position: absolute;
+    margin-right: 260px;
+}
+
+#c {
+    font-size: 18px;
+    position: absolute;
+    margin-right: 50px;
+}
+
+#d {
+    font-size: 18px;
+    position: absolute;
+    margin-left: 160px;
+}
+
+#e {
+    font-size: 18px;
+    position: absolute;
+    margin-left: 400px;
+}
+
+
+#x {
+    height: 15px;
+    width: 15px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#plus2 {
+    position: absolute;
+    display: flex;
+    margin-left: 10px;
+    height: 40px;
+}
+
+#fitnessname {
+    height: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#fit {
+    height: 40px;
+    width: 900px;
+    background-color: rgb(226, 220, 211);
+    border-radius: 30px;
+    margin-top: 5px;
+}
+
+#fitnessbox {
+    height: 710px;
+    width: 900px;
+    margin-left: 25px;
+    margin-top: 100px;
+    position: absolute;
+    /* display: flex; */
+}
+
+#work1 {
+    position: absolute;
+    margin-left: 70px;
+}
+
+#time1 {
+    position: absolute;
+    margin-left: 280px;
+}
+
+#calorie1{
+    position: absolute;
+    margin-left: 490px;
+}
+
+#date1 {
+    position: absolute;
+    margin-left: 640px;
+}
+
+#note1 {
+    position: absolute;
+    margin-left: 780px;
+}
+
+#first{
+    height: 40px;
+    width: 400px;
+    background-color: rgb(226, 220, 211);
+    border-radius: 30px;
+    margin-top: 5px;
+}
+
+#vitaminbox {
+    height: 510px;
+    width: 400px;
+    margin-left: 25px;
+    margin-top: 100px;
+    position: absolute;
+    /* display: flex; */
+}
+
+#vitamin_name{
+    position: absolute;
+    margin-left: 60px;
+}
+
+#dosage{
+    position: absolute;
+    margin-left: 270px;
 }
