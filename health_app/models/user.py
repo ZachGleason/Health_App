@@ -71,3 +71,9 @@ class User:
             flash('Password should have at least one uppercase letter')
             is_valid = False
         return is_valid
+        
+
+    @classmethod
+    def edit_user(cls,data):
+        query = "UPDATE users SET first_name=%(first_name)s, last_name=%(last_name)s, email=%(email)s, age=%(age)s, weight= %(weight)s, location=%(location)s, gender=%(gender)s WHERE id=%(id)s;"
+        return connectToMySQL("fitness").query_db(query, data)

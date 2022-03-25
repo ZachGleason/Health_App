@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style5.css') }}">
+</head>
+<body>
+<div id="main">
+    <div>
+    <form action='/update/profile' method="post">
+        <h1 id="header2">Hello {{edit.first_name}}!</h1>
+        {% with messages = get_flashed_messages(category_filter=['sighting']) %}
+            {% if messages %}
+            <div role="alert">
+                <strong>TRY AGAIN!</strong>
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
+    <div id="sector">
+        <div id="box3">
+            <input type="hidden" name="id" value={{edit.id}}>
+            <div>
+                <div class="input-group col-12 mb-4">
+                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                            <i class="fa fa-envelope text-muted"></i>
+                        </span>
+                    <input type="text" name="first_name" value="{{edit.first_name}}" class="form-control bg-white border-left-0 border-md">
+                </div>
+                <div class="input-group col-12 mb-4">
+                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                        <i class="fa fa-envelope text-muted"></i>
+                    </span>
+                    <input type="text" name="last_name" value="{{edit.last_name}}" class="form-control bg-white border-left-0 border-md">
+                </div>
+                <div class="input-group col-12 mb-4">
+                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                        <i class="fa fa-envelope text-muted"></i>
+                    </span>
+                    <input type="email" name="email" value="{{edit.email}}"  class="form-control bg-white border-left-0 border-md">
+                </div>
+                <div class="input-group col-12 mb-4">
+                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                        <i class="fa fa-envelope text-muted"></i>
+                    </span>
+                <input type="number" name="age" value="{{edit.age}}" class="form-control bg-white border-left-0 border-md">
+                </div>
+                <div class="input-group col-12 mb-4">
+                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                        <i class="fa fa-envelope text-muted"></i>
+                    </span>
+                    <input type="number" name="weight" value="{{edit.weight}}" class="form-control bg-white border-left-0 border-md">
+                </div>
+                <div class="input-group col-12 mb-4">
+                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                        <i class="fa fa-envelope text-muted"></i>
+                    </span>
+                    <select id="gender" name="gender" class="form-control bg-white border-left-0 border-md">
+                        <option value="Gender">Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="N/A">Prefer To Not say</option>
+                        <option value="N/A">Other</option>
+                    </select>
+                </div>
+                <div class="input-group col-12 mb-4">
+                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                        <i class="fa fa-envelope text-muted"></i>
+                    </span>
+                    <input type="text" name="location" value="{{edit.location}}" class="form-control bg-white border-left-0 border-md">
+                </div>
+                <div id="button">
+                    <button class="btn btn-dark">Edit Profile</button>  
+                </div>
+                <div id="dash">
+                    <a href="/dashboard" id="dash" >Return To Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+</body>
+</html>

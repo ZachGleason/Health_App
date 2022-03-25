@@ -64,3 +64,34 @@ def dashboard():
 def logout():
     session.clear()
     return redirect('/login')
+
+@app.route('/profile/<int:id>')
+def edit_user(id):
+    if 'user_id' not in session:
+        return redirect('/logout')
+    data = {
+        "id":id
+    }
+    user_data = {
+        "id":session['user_id']
+    }
+    return render_template("profile.html", edit=User.get_by_id(data))
+
+@app.route('/update/profile', methods=['POST'])
+def update_user():
+    if 'user_id' not in session:
+        return redirect('/logout')
+    # if not User.validate_user(request.form):
+    #     return redirect('/login')
+    data = {
+        "first_name": request.form["first_name"],
+        "last_name": request.form["last_name"],
+        "email": request.form["email"],
+        "age": request.form["age"],
+        "weight": request.form["weight"],
+        "location": request.form["location"],
+        "gender": request.form["gender"],
+        "id": request.form['id']
+    }
+    User.edit_user(data)
+    return redirect('/dashboard')
